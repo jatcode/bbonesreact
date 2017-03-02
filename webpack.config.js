@@ -40,7 +40,7 @@ module.exports= {
 		contentBase: path.join(__dirname,'public'),
 		compress: true,
 		port:3000,
-		stats:'errors-only',
+		// stats:'errors-only',
 		open:true
 	},
 	plugins:[

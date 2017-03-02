@@ -1,15 +1,7 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-
-const css = require('./app.css');
+import { router } from './store'
 
 ReactDOM.render(
-  <h1>Hello, world! or another</h1>,
+  router,
   document.getElementById('root')
 );
-
-
-// console.log('webpack-dev-server refreshing won toto');
-
-//https://github.com/gaearon/react-hot-boilerplate/tree/next
-//https://github.com/jatcode/react-hot-loader
