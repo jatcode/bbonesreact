@@ -85,10 +85,6 @@ label {
     border: none;
     color: #AECFE5;
 }
-span.mylink  {  
-  /*background: red;*/
-    
-}
 
 /*
  * -- CONTENT STYLES --
@@ -102,20 +98,13 @@ span.mylink  {
     /*min-height: 12%;
     z-index: 2;*/
     background: white;
-
 }
-
-
-
-
 
 /* This is the class used for the dark-background areas. */
 .ribbon {
     background: #2d3e50;
     color: #aaa;
 }
-
-
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SreguLabel, MyButton } from '../../components/MyComponents'
+// import { SreguLabel, MyButton } from '../../components/MyComponents'
 
 class Login extends Component {
 
@@ -7,8 +7,8 @@ class Login extends Component {
 		return(
 			<form>
 				<header>Login Form</header>
-				<SreguLabel labelFor={'userNombre'} labelName={'usuario'} />
-				<MyButton> boton</MyButton>
+				{/* <SreguLabel labelFor={'userNombre'} labelName={'usuario'} /> */}
+				{/* <MyButton> boton</MyButton> */}
 				<input type='text' name='username' />
 				<input type='password' name='username' />
 			</form>

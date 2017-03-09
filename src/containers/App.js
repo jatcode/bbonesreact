@@ -1,19 +1,18 @@
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import  * as userActionCreators  from '../containers/users/actions';
+import React, { Component } from 'react';
 import Main from '../components/Main';
+import Routir from '../router'
 
-function mapStateToProps(state){
-    return {
-      users: state.users,
-      currUser: state.currUser, 
-		};
+class App extends Component {
+  
+  render(){
+    return(
+      <div>
+        <h1>MAIN APP</h1>
+        <Main/>
+        <Routir/>
+      </div>
+    );
+  }
 }
-
-function mapDispatchToProps(dispatch){
-		return bindActionCreators({...userActionCreators}, dispatch);
-}
-
-const App = connect (mapStateToProps,mapDispatchToProps)(Main);
 
 export default App;

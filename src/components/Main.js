@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
-import {  MyLinkItem } from './MyComponents'
-import { Header/*, Container*/ } from '../layout/index'
-import { Container } from 'semantic-ui-react'
+import { Header, Container, Sidebar, Content, Footer  } from '../layout/index'
+import {  BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class Main extends Component {
 	render(){
 		return (
-			<div>
+			<Container>
 					<Header>
-						<MyLinkItem toValue='/' label='Home'/>
-						<MyLinkItem toValue='/userlist' label='User List'/>
-						<MyLinkItem toValue='/adduser' label='Add User'/>
+						<ul>
+			        <li className="pure-menu-item"><Link to="/" className="pure-menu-link">Home</Link></li>
+			        <li className="pure-menu-item"><Link to="/about" className="pure-menu-link">About</Link></li>
+						</ul>
 					</Header> 
-					<div className='content-wrapper'>
-						<Container textAlign='justified'>
-							{React.cloneElement(this.props.children, this.props)}
-						</Container>
-					</div>
-			</div>
+					<Sidebar/>
+					<Content/>
+					<Footer/>
+							{/* {React.cloneElement(this.props.children, this.props)} */}
+			</Container>
 		);
 	}
 };
