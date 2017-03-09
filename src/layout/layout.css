@@ -92,9 +92,9 @@ label {
  */
 .content-wrapper {
     /* These styles are required for the "scroll-over" effect */
-    position: absolute;
+    /*position: absolute;
     top: 20%;
-    width: 100%;
+    width: 100%;*/
     /*min-height: 12%;
     z-index: 2;*/
     background: white;
@@ -161,3 +161,19 @@ label {
         font-size: 300%;
     }
 }
+
+.childbox{
+  min-height: 2em;
+  border: 2px solid red;
+}
+
+.sidebar {
+  
+}
+.header{
+  
+}
+.content{
+  
+}
+

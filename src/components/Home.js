@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Login from '../containers/login/index'
+import { Sidebar, Content  } from '../layout/index'
 
 class Home extends Component {
   render() {
@@ -7,7 +8,9 @@ class Home extends Component {
       <div>
         {/* <User {...this.props}/> */}
 				{/* {...this.props} */}
-				<Login />
+        <Sidebar/>
+        <Content/>
+        {/* <Login /> */}
       </div>
     );
   }

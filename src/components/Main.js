@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Header, Container, Sidebar, Content, Footer  } from '../layout/index'
 import {  BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import   Home from './Home';
 
 class Main extends Component {
 	render(){
@@ -12,8 +13,7 @@ class Main extends Component {
 			        <li className="pure-menu-item"><Link to="/about" className="pure-menu-link">About</Link></li>
 						</ul>
 					</Header> 
-					<Sidebar/>
-					<Content/>
+					<Home/>
 					<Footer/>
 							{/* {React.cloneElement(this.props.children, this.props)} */}
 			</Container>

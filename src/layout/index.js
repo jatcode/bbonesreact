@@ -22,7 +22,7 @@ export const DefaultLayout = ({component:Component,...rest}) =>{
   )
 };
 export const Sidebar = (props)=>
-  <div className='child'>
+  <div className='childbox sidebar'>
     {props.children}
   </div>
 export const ZideBar = () => (
@@ -66,7 +66,7 @@ export const ZideBar = () => (
 
 export function Header (props){
   return (
-    <div className=" child header">
+    <div className=" childbox header">
         <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
             <a className="pure-menu-heading" href="">{'PB_0.0.2'}</a>
             <ul className="pure-menu-list">
@@ -89,7 +89,7 @@ export function Container (props){
 }
 export function Content (props){
   return (
-    <div className="child content">
+    <div className="childbox content">
       
       {props.children}
     </div>
@@ -98,7 +98,7 @@ export function Content (props){
 
 export function Footer (props){
   return (
-    <div className=" child footer l-box is-center">
+    <div className=" childbox footer l-box is-center">
         RulesWare CopyRights 2017 
         {props.children}
     </div>
