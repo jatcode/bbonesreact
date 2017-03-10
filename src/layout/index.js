@@ -69,16 +69,39 @@ export function Header (props){
     <div className=" childbox header">
         <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
             <a className="pure-menu-heading" href="">{'PB_0.0.2'}</a>
+                {props.children}
+        </div>
+    </div>
+  );
+}
+export function NavBar (props){
+	const {links} = props;
+  return (
+    <nav className=" navbar">
+			<ul className="menu-list">
+					{ links.map(({linkTo, linkName},i)=>
+						<li key={i} className='menu-item'><Link to={linkTo} className='menu-link'>{linkName}</Link></li>
+					)}
+							{props.children}
+			</ul>
+    </nav>
+  );
+}
+	/*export function Header (props){
+  return (
+    <div className=" childbox header">
+        <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+            <a className="pure-menu-heading" href="">{'PB_0.0.2'}</a>
             <ul className="pure-menu-list">
-                {/* <li className="pure-menu-item pure-menu-selected"><a href="#" className="pure-menu-link">Home</a></li> */}
-                {/* <li className="pure-menu-item"><a href="#" className="pure-menu-link">Tour</a></li>
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Sign Up</a></li> */}
+                 <li className="pure-menu-item pure-menu-selected"><a href="#" className="pure-menu-link">Home</a></li> 
+                 <li className="pure-menu-item"><a href="#" className="pure-menu-link">Tour</a></li>
+                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Sign Up</a></li> 
                 {props.children}
             </ul>
         </div>
     </div>
   );
-}
+}*/
 
 export function Container (props){
   return (

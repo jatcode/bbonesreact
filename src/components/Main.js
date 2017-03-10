@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { Header, Container, Sidebar, Content, Footer  } from '../layout/index'
+import { Header, Container, Sidebar, Content, Footer, NavBar } from '../layout/index'
 import {  BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import   Home from './Home';
 
 class Main extends Component {
 	render(){
+		const links = [{linkTo:"/",linkName:"Home"},{linkTo:"/login",linkName:"Login"}];
 		return (
 			<Container>
+
+        <h1>MAIN APP</h1>
 					<Header>
-						<ul>
-			        <li className="pure-menu-item"><Link to="/" className="pure-menu-link">Home</Link></li>
-			        <li className="pure-menu-item"><Link to="/about" className="pure-menu-link">About</Link></li>
-						</ul>
+						<NavBar links={links} />
 					</Header> 
-					<Home/>
+					{/*<Home/>
 					<Footer/>
 							{/* {React.cloneElement(this.props.children, this.props)} */}
 			</Container>

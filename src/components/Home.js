@@ -5,7 +5,7 @@ import { Sidebar, Content  } from '../layout/index'
 class Home extends Component {
   render() {
     return (
-      <div>
+      <div className='maincontent'>
         {/* <User {...this.props}/> */}
 				{/* {...this.props} */}
         <Sidebar/>
