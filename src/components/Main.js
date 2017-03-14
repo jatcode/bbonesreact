@@ -8,12 +8,11 @@ class Main extends Component {
 		const links = [{linkTo:"/",linkName:"Home"},{linkTo:"/login",linkName:"Login"}];
 		return (
 			<Container>
-
-        <h1>MAIN APP</h1>
 					<Header>
 						<NavBar links={links} />
 					</Header> 
-					{/*<Home/>
+
+					<Home/>
 					<Footer/>
 							{/* {React.cloneElement(this.props.children, this.props)} */}
 			</Container>

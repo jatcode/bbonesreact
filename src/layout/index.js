@@ -66,23 +66,27 @@ export const ZideBar = () => (
 
 export function Header (props){
   return (
-    <div className=" childbox header">
-        <div className="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a className="pure-menu-heading" href="">{'PB_0.0.2'}</a>
-                {props.children}
-        </div>
-    </div>
+    <header className=" header">
+			<a className="menu-heading" href="#">
+				<span><i className="fa fa-building" aria-hidden="true"></i></span>
+				<span>{'PB_0.0.2'}</span>
+			</a>
+			<div className="menu-login">
+			  <Link to='/signup' className='menu-login-link'>SignUp</Link>
+				<Link to='/login'  className='menu-login-link'>Login</Link>
+      </div>
+      {props.children}
+    </header>
   );
 }
 export function NavBar (props){
 	const {links} = props;
   return (
-    <nav className=" navbar">
+    <nav className=" navbar sidebar">
 			<ul className="menu-list">
 					{ links.map(({linkTo, linkName},i)=>
 						<li key={i} className='menu-item'><Link to={linkTo} className='menu-link'>{linkName}</Link></li>
 					)}
-							{props.children}
 			</ul>
     </nav>
   );
@@ -105,7 +109,7 @@ export function NavBar (props){
 
 export function Container (props){
   return (
-    <div className="content-wrapper">
+    <div className="container">
       {props.children}
     </div>
   );
@@ -113,7 +117,7 @@ export function Container (props){
 export function Content (props){
   return (
     <div className="childbox content">
-      
+			<h3>Content goes here </h3>
       {props.children}
     </div>
   );
@@ -121,7 +125,7 @@ export function Content (props){
 
 export function Footer (props){
   return (
-    <div className=" childbox footer l-box is-center">
+    <div className=" childbox footer is-center">
         RulesWare CopyRights 2017 
         {props.children}
     </div>

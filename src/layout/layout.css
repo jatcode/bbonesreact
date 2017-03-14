@@ -162,9 +162,19 @@ label {
     }
 }
 
+.container{
+
+}
+.header{
+  
+}
+.footer{
+
+
+}
 .childbox{
-  min-height: 2em;
-  border: 2px solid red;
+ // min-height: 2em;
+ // border: 2px solid red;
 }
 
 .sidebar {
@@ -180,9 +190,6 @@ label {
 }
 .menu-item{
 
-}
-.header{
-  
 }
 .content{
   
