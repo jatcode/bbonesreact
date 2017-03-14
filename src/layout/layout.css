@@ -1,175 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+
 * {
-    -webkit-box-sizing: border-box;
+    /*-webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box;
+    box-sizing: border-box;*/
+    margin: 0;
+    padding: 0;
 }
 
-/*
- * -- BASE STYLES --
- * Most of these are inherited from Base, but I want to change a few.
- */
+
 body {
-    line-height: 1.7em;
-    color: #7f8c8d;
-    font-size: 13px;
+font-family: 'Open Sans';
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
-    color: #34495e;
-}
-
-.pure-img-responsive {
-    max-width: 100%;
-    height: auto;
-}
-
-/*
- * -- LAYOUT STYLES --
- * These are some useful classes which I will need
- */
-.l-box {
-    padding: 1em;
-}
-
-.l-box-lrg {
-    padding: 2em;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-}
-
-.is-center {
-    text-align: center;
-}
-
-/*
- * -- MENU STYLES --
- * I want to customize how my .pure-menu looks at the top of the page
- */
-
-.home-menu {
-    padding: 0.5em;
-    text-align: center;
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
-}
-.home-menu {
-    background: #2d3e50;
-}
-.pure-menu.pure-menu-fixed {
-    /* Fixed menus normally have a border at the bottom. */
-    border-bottom: none;
-    /* I need a higher z-index here because of the scroll-over effect. */
-    z-index: 4;
-}
-
-.home-menu .pure-menu-heading {
-    color: white;
-    font-weight: 400;
-    font-size: 120%;
-}
-
-.home-menu .pure-menu-selected a  {
-    color: white;
-}
-
-.home-menu a {
-    color: #6FBEF3;
-}
-.home-menu li a:hover,
-.home-menu li a:focus {
-    background: none;
-    border: none;
-    color: #AECFE5;
-}
-
-/*
- * -- CONTENT STYLES --
- * This represents the content area (everything below the blue section)
- */
-.content-wrapper {
-    /* These styles are required for the "scroll-over" effect */
-    /*position: absolute;
-    top: 20%;
-    width: 100%;*/
-    /*min-height: 12%;
-    z-index: 2;*/
-    background: white;
-}
-
-
-/*
- * -- TABLET (AND UP) MEDIA QUERIES --
- * On tablets and other medium-sized devices, we want to customize some
- * of the mobile styles.
- */
-@media (min-width: 48em) {
-
-    /* We increase the body font size */
-    body {
-        font-size: 16px;
-    }
-
-    /* We can align the menu header to the left, but float the
-    menu items to the right. */
-    .home-menu {
-        text-align: left;
-    }
-        .home-menu ul {
-            float: right;
-        }
-
-    /* We increase the height of the splash-container */
-/*    .splash-container {
-        height: 500px;
-    }*/
-
-    /* We decrease the width of the .splash, since we have more width
-    to work with */
-    .splash {
-        width: 50%;
-        height: 50%;
-    }
-
-    .splash-head {
-        font-size: 250%;
-    }
-
-
-    /* We remove the border-separator assigned to .l-box-lrg */
-    .l-box-lrg {
-        border: none;
-    }
-
-}
-/*
- * -- DESKTOP (AND UP) MEDIA QUERIES --
- * On desktops and other large devices, we want to over-ride some
- * of the mobile and tablet styles.
- */
-@media (min-width: 78em) {
-    /* We increase the header font size even more */
-    .splash-head {
-        font-size: 300%;
-    }
-}
-
-.container{
-
+a {
+  text-decoration: none;
 }
 .header{
-  
+  width: 100%;
+  height: 50px;
+  background:#2980b9;
+  margin: 0 auto;
+}
+.logo{
+  float: left;
+  margin-top: 4px;
+}
+//http://stackoverflow.com/questions/16946878/how-do-i-select-an-element-that-has-a-certain-class
+//https://www.khanacademy.org/computing/computer-programming/html-css/more-css-selectors/p/combining-css-class-and-element-selectors
+/*
+https://www.khanacademy.org/computing/computer-programming/html-css/more-css-selectors/p/combining-css-class-and-element-selectors
+http://collectui.com/
+https://dribbble.com/shots/2299941-Sign-in-Modal
+https://dribbble.com/shots/3278127-Roast-Site/attachments/705547
+https://dribbble.com/shots/3165170-Dashboard-Navigation-Concept
+https://www.materialui.co/metrocolors
+https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+http://chrisarasin.com/frosted-glass-css/
+https://fonts.google.com/
+
+*/
+.logo a{
+  font-size: 1.6em;
+  color: #fff;
+}
+.logo a span i {
+  font-weight: 400;;
+}
+.container{
+
+
 }
 .footer{
 
 
 }
 .childbox{
- // min-height: 2em;
- // border: 2px solid red;
+  
 }
 
 .sidebar {
@@ -179,9 +66,7 @@ label {
 
 }
 .menu-list{
-	display: flex;
-
-
+  
 }
 .menu-item{
 
@@ -189,4 +74,19 @@ label {
 .content{
   
 }
+
+.content-wrapper {
+    background: white;
+}
+
+
+/* * -- TABLET (AND UP) MEDIA QUERIES --  */
+@media (min-width: 48em) {
+  
+}
+/*  * -- DESKTOP (AND UP) MEDIA QUERIES -- */
+@media (min-width: 78em) {
+
+}
+
 

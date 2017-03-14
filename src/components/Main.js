@@ -9,11 +9,10 @@ class Main extends Component {
 		return (
 			<Container>
 					<Header>
-						<NavBar links={links} />
+						{/* <NavBar links={links} /> */}
 					</Header> 
-
-					<Home/>
-					<Footer/>
+					{/* <Home/>
+					<Footer/> */}
 							{/* {React.cloneElement(this.props.children, this.props)} */}
 			</Container>
 		);

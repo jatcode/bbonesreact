@@ -67,14 +67,14 @@ export const ZideBar = () => (
 export function Header (props){
   return (
     <header className=" header">
-			<a className="menu-heading" href="#">
-				<span><i className="fa fa-building" aria-hidden="true"></i></span>
+			<a className="logo" href="#">
+				{/* <span><i className="fa fa-building" aria-hidden="false"></i></span> */}
 				<span>{'PB_0.0.2'}</span>
 			</a>
-			<div className="menu-login">
+			{/* <div className="menu-login">
 			  <Link to='/signup' className='menu-login-link'>SignUp</Link>
 				<Link to='/login'  className='menu-login-link'>Login</Link>
-      </div>
+      </div> */}
       {props.children}
     </header>
   );
