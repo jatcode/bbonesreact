@@ -1,34 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
 
-* {
-    /*-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;*/
-    margin: 0;
-    padding: 0;
-}
+/*http://stackoverflow.com/questions/16946878/how-do-i-select-an-element-that-has-a-certain-class
+https://www.khanacademy.org/computing/computer-programming/html-css/more-css-selectors/p/combining-css-class-and-element-selectors
 
-
-body {
-font-family: 'Open Sans';
-}
-
-a {
-  text-decoration: none;
-}
-.header{
-  width: 100%;
-  height: 50px;
-  background:#2980b9;
-  margin: 0 auto;
-}
-.logo{
-  float: left;
-  margin-top: 4px;
-}
-//http://stackoverflow.com/questions/16946878/how-do-i-select-an-element-that-has-a-certain-class
-//https://www.khanacademy.org/computing/computer-programming/html-css/more-css-selectors/p/combining-css-class-and-element-selectors
-/*
 https://www.khanacademy.org/computing/computer-programming/html-css/more-css-selectors/p/combining-css-class-and-element-selectors
 http://collectui.com/
 https://dribbble.com/shots/2299941-Sign-in-Modal
@@ -40,13 +13,87 @@ http://chrisarasin.com/frosted-glass-css/
 https://fonts.google.com/
 
 */
-.logo a{
-  font-size: 1.6em;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Montserrat:500|Roboto');
+
+* {
+    /*-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;*/
+    -webkit-backdrop-filter
+    margin: 0;
+    padding: 0;
+}
+
+body {
+//font-family: 'Open Sans';
+font-family: 'Montserrat', sans-serif;
+//font-family: 'Baloo Bhaina', cursive;
+//font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+.header{
+  width: 95%;
+  height: 40px;
+  /*background:#2980b9;*/
+  /*background:#2c3e50;*/
+  /*background:#7f8c8d;*/
+  background:#95a5a6;
+  margin: 0 auto;
+}
+header {
+  
+}
+.tinyheader{
+  width: 98%;
+  height: 75px;
+  /*background: #e74c3c;*/
+  background: rgba(231, 76, 60,0.8);
+  display: flex;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.tinyheader a span img{
+  padding: 4px;
+  height: 75px;
+  /*box-shadow: 3px 3px 1px #1e1e1e;*/
+  border-radius: 3px;
+}
+.tinyheader a span{
+  height: 20px;
+  padding: 0 5px;
   color: #fff;
+  font-size: 20px;
+  font-weight: 600;
 }
-.logo a span i {
-  font-weight: 400;;
+.menu-login {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  
 }
+.menu-login-link {
+  padding: .5em 1em;
+  margin: 0 2px;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+.menu-login-link:hover {
+  color: #2980b9;
+  background-color: #fff;
+}
+
+/*box-shadow: 0 2px 6px 1px rgba(0, 0, 0, .5), inset 0 0 150px  4px 4ba(2, 0, 0, 1);*/
+.mainheader{
+  width: 100%;
+  box-shadow: 10px 10px 5px #888888;
+}
+
 .container{
 
 
