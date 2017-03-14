@@ -5,7 +5,7 @@ import   Home from './Home';
 
 class Main extends Component {
 	render(){
-		const links = [{linkTo:"/",linkName:"Home"},{linkTo:"/login",linkName:"Login"}];
+		const links = [{linkTo:'/',linkName:'Home'},{linkTo:'/login',linkName:'Login'}];
 		return (
 			<Container>
 					<Header>

@@ -100,11 +100,6 @@ label {
     background: white;
 }
 
-/* This is the class used for the dark-background areas. */
-.ribbon {
-    background: #2d3e50;
-    color: #aaa;
-}
 
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --

@@ -7,11 +7,8 @@ class Home extends Component {
   render() {
     return (
       <div className='maincontent'>
-        {/* <User {...this.props}/> */}
-				{/* {...this.props} */}
 				{/*<Sidebar/>*/}
         <Content/>
-        {/* <Login /> */}
       </div>
     );
   }
