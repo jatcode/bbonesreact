@@ -198,7 +198,15 @@ input[type="submit"] {
 
 
 
-.container{}
+.container{
+	margin: 5px;
+	padding:5px;
+
+	border: 1px solid black;
+	height: 100%;
+	width: 99%;
+
+}
 .footer{}
 .childbox{}
 .sidebar {}

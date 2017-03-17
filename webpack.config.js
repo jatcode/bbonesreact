@@ -27,24 +27,24 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
-      }, {
+			},
+			{
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
-
-			},
+			}
 			/*	{
 				test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				loader: 'file-loader'
 			},*/
-			{
+			/*{
 				test: /\.(jpe?g|png|gif|svg)$/,
 				use: [{
 					loader: 'url-loader',
 					options:{ limit:10000 }//converts images <10k to base64 strings? necesary????
 				}]
 				//				loader: "file-loader?name=app/images/[name].[ext]"
-			},
+			},*/
     ]
   },
   devServer: {
@@ -65,6 +65,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'pb third POC', template: './src/index.ejs', // Load a custom template (ejs by default see the FAQ for details)
     }),
-    new DashboardPlugin(),
+		//new DashboardPlugin(),
   ]
 }

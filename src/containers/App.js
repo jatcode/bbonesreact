@@ -1,34 +1,20 @@
 import React, { Component } from 'react';
 // import Main from '../components/Main';
 // import SignUp from '../containers/login/signup'
+import {Container } from '../layout/index.js';
+import Login from '../containers/login/index'
+import SignUp from '../containers/login/signup'
 
 class App extends Component {
-  constructor(props) {
-   super(props);
-   this.state = {value: ''};
-
-   this.handleChange = this.handleChange.bind(this);
-   this.handleSubmit = this.handleSubmit.bind(this);
- }
-
- handleChange(event) {
-   this.setState({value: event.target.value});
- }
-
- handleSubmit(event) {
-   alert('A name was submitted: ' + this.state.value);
-   event.preventDefault();
- }
-
+	constructor(props) {
+		super(props);
+	}
  render() {
-   return (
-     <form onSubmit={this.handleSubmit}>
-       <label>
-         Name:
-         <input type="text" value={this.state.value} onChange={this.handleChange} />
-       </label>
-       <input type="submit" value="Submit" />
-     </form>
+	 return (
+		 <Container>
+			 <SignUp />
+			 {this.props.children}
+		 </Container>
    );
  }
 }

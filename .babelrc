@@ -2,7 +2,7 @@
   "presets": [
     
     ["es2016"],
-    // ["es2016", {"modules": false}], webpack understands the native import syntax, and uses it for tree shaking
+    ["es2015", {"modules": false}],// webpack understands the native import syntax, and uses it for tree shaking
 
     "stage-2",
     // Specifies what level of language features to activate.

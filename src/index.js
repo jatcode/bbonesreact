@@ -1,14 +1,13 @@
 import React from  'react'
 import ReactDOM from 'react-dom';
-// import { BrowserRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import  App   from './containers/App'
-// import SignUp from './containers/login/signup'
-
+import  AppState from './stores/AppState'
 ReactDOM.render(
-  <App/> ,
+	<Router> 
+    <App/>
+	</Router>
+	,
   document.getElementById('root')
 );
 
-/*<Router> 
-    <App/>
-	</Router>,*/

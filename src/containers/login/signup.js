@@ -1,37 +1,99 @@
 import React, { Component } from 'react';
-// import { SreguLabel, MyButton } from '../../components/MyComponents'
-// import { FormInput, FormInput1 } from '../../components/MyComponents'
+import {
+	  BrowserRouter as Router,
+	  Route,
+	  Link,
+	  Redirect,
+	  withRouter
+} from 'react-router-dom'
+
+const AuthExample = () => (
+  <Router>
+    <div>
+      <AuthButton/>
+      <ul>
+        <li><Link to="/public">Public Page</Link></li>
+        <li><Link to="/protected">Protected Page</Link></li>
+      </ul>
+      <Route path="/public" component={Public}/>
+      <Route path="/login" component={Login}/>
+      <PrivateRoute path="/protected" component={Protected}/>
+    </div>
+  </Router>
+)
+
+const fakeAuth = {
+  isAuthenticated: false,
+  authenticate(cb) {
+    this.isAuthenticated = true
+    setTimeout(cb, 100) // fake async
+  },
+  signout(cb) {
+    this.isAuthenticated = false
+    setTimeout(cb, 100)
+  }
+}
+
+const AuthButton = withRouter(({ history }) => (
+  fakeAuth.isAuthenticated ? (
+    <p>
+      Welcome! <button onClick={() => {
+        fakeAuth.signout(() => history.push('/'))
+      }}>Sign out</button>
+    </p>
+  ) : (
+    <p>You are not logged in.</p>
+  )
+))
+
+const PrivateRoute = ({ component, ...rest }) => (
+  <Route {...rest} render={props => (
+    fakeAuth.isAuthenticated ? (
+      React.createElement(component, props)
+    ) : (
+      <Redirect to={{
+        pathname: '/login',
+        state: { from: props.location }
+      }}/>
+    )
+  )}/>
+)
+
+const Public = () => <h3>Public</h3>
+const Protected = () => <h3>Protected</h3>
+
 
 class SignUp extends Component {
-  constructor(props) {
-   super(props);
-   this.state = {value: ''};
+	constructor(props){
+		super(props);
+		this.state = {
+			redirectToReferrer: false
+		}
 
-   this.handleChange = this.handleChange.bind(this);
-   this.handleSubmit = this.handleSubmit.bind(this);
- }
- componentDidMount(){
-   console.log('stado',this.state);
- }
+	}
 
- handleChange(event) {
-   console.log('stado1',this.state);
-   this.setState({value: event.target.value});
- }
-
- handleSubmit(event) {
-   alert('A name was submitted: ' + this.state.value);
-   event.preventDefault();
- }
+		login = () => {
+			fakeAuth.authenticate(() => {
+				this.setState({ redirectToReferrer: true })
+			})
+		}
   render() {
+		console.log(this.props);
+		console.log(this.props.location);
+		const { from } = this.props.location.state || { from: { pathname: '/' } }
+	  const { redirectToReferrer } = this.state
+    
+    if (redirectToReferrer) {
+      return (
+        <Redirect to={from}/>
+      )
+    }
+     
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+			<div>
+        <p>You must log in to view the page at {from.pathname}</p>
+        <button onClick={this.login}>Log in</button>
+      </div>
     );
   }
 }
