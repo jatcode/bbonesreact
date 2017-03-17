@@ -1,3 +1,17 @@
+
+export function apiSignUp(userService,email, password){  
+  return userService
+    .create({email, password })
+    .then((value) => {
+    	   console.log('data en API',value.data);
+    	return value.data;
+    })
+    .catch((err) => {
+    	 console.log('error en api',err);
+    	return err.data;
+    })
+}
+
 export function apiGetAllUsers(userService){  
   return userService
     .find({})

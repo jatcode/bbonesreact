@@ -6,16 +6,9 @@ import Login from '../containers/login/index'
 import SignUp from '../containers/login/signup'
 class Main extends Component {
 	render(){
-		const links = [{linkTo:'/',linkName:'Home'},{linkTo:'/login',linkName:'Login'}];
+		//const links = [{linkTo:'/',linkName:'Home'},{linkTo:'/login',linkName:'Login'}];
 		return (
-			<Container>
-					<Header>
-						{/* <NavBar links={links} /> */}
-					</Header> 
-					<Login/>
-				{/*	<Footer/> */}
-							{/* {React.cloneElement(this.props.children, this.props)} */}
-			</Container>
+			<SignUp />
 		);
 	}
 };

@@ -1,18 +1,38 @@
 import React, { Component } from 'react';
 // import { SreguLabel, MyButton } from '../../components/MyComponents'
+// import { FormInput, FormInput1 } from '../../components/MyComponents'
 
 class SignUp extends Component {
+  constructor(props) {
+   super(props);
+   this.state = {value: ''};
 
-	render(){
-		return(
-			<form>
-				<header>SignUp Form</header>
-				{/* <SreguLabel labelFor={'userNombre'} labelName={'usuario'} /> */}
-				{/* <MyButton> boton</MyButton> */}
-				<input type='text' name='username' />
-				<input type='password' name='username' />
-			</form>
-		);
-	}
+   this.handleChange = this.handleChange.bind(this);
+   this.handleSubmit = this.handleSubmit.bind(this);
+ }
+ componentDidMount(){
+   console.log('stado',this.state);
+ }
+
+ handleChange(event) {
+   console.log('stado1',this.state);
+   this.setState({value: event.target.value});
+ }
+
+ handleSubmit(event) {
+   alert('A name was submitted: ' + this.state.value);
+   event.preventDefault();
+ }
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
 }
 export default SignUp;
