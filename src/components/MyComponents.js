@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 
 export const FormInput = ({type,label,name,placeholder,value,onChange})=>
   <div className='formfield'>
@@ -16,11 +16,37 @@ export const FormInput1 = ({type, label, name, placeholder, value, onChange})=>
     />    
   </div>
 
-  export const FormInput2 = ({label, name}) => 
-  <div>
-    <div class="title">Login</div>
-    <input type="text" placeholder="Username"/>
-    <input type="password" placeholder="Password"/>
-    <input type="submit" value="Get in there"/>
-  </div>
+export class InputField extends Component{
+  constructor({type,label,name,placeholder,value,onChange}){
+    super(props)
+    this.onChange = this.onChange.bind(this);
+  }
+  onChange(e){
+    this.props.onChange(e.target.name, e.target.value);
+  }
+  render(){
+    return(
+      <div>
+        <label htmlFor={input.id}>{input.label || input.name}</label>
+        <input
+            // className="form-control"
+            id={input.id}
+            type={input.type}
+            name={input.name}
+            placeholder={input.placeholder}
+            value={input.value}
+            onChange={this.onChange}
+        />
+      </div>
+    );
+  }
+}
+InputField.propTypes = {
+  onChange: PropTypes.func.isRequired
+}
+
+InputField.defaultProps = {
+  type: 'text'
+}
+  
 
