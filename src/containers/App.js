@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import SignUp from '../containers/login/signup'
 import {Container } from '../layout/index.js';
 import Login from '../containers/login/index'
-import SignUp from '../containers/login/signup'
+import Routes from '../containers/login/routerex'
 
 class App extends Component {
 	constructor(props) {
@@ -12,8 +12,9 @@ class App extends Component {
  render() {
 	 return (
 		 <Container>
-			 <SignUp />
-			 {this.props.children}
+			 {/* <Login /> */}
+			 <Routes />
+			 {/* {this.props.children} */}
 		 </Container>
    );
  }

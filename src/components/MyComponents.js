@@ -9,10 +9,10 @@ export const FormInput = ({type,label,name,placeholder,value,onChange})=>
       value={value} onChange={onChange}
     />    
   </div>
-export const FormInput1 = ({type,label,name,placeholder})=>
+export const FormInput1 = ({type, label, name, placeholder, value, onChange})=>
   <div className='formfield'>    
-    <input type={type} name={name} placeholder={label}
-			// value={value} onChange={onChange}
+    <input type={type} name={name} placeholder={placeholder}
+		value={value} onChange={onChange}
     />    
   </div>
 

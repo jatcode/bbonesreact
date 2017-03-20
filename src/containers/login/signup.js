@@ -7,92 +7,53 @@ import {
 	  withRouter
 } from 'react-router-dom'
 
-const AuthExample = () => (
-  <Router>
-    <div>
-      <AuthButton/>
-      <ul>
-        <li><Link to="/public">Public Page</Link></li>
-        <li><Link to="/protected">Protected Page</Link></li>
-      </ul>
-      <Route path="/public" component={Public}/>
-      <Route path="/login" component={Login}/>
-      <PrivateRoute path="/protected" component={Protected}/>
-    </div>
-  </Router>
-)
-
-const fakeAuth = {
-  isAuthenticated: false,
-  authenticate(cb) {
-    this.isAuthenticated = true
-    setTimeout(cb, 100) // fake async
-  },
-  signout(cb) {
-    this.isAuthenticated = false
-    setTimeout(cb, 100)
-  }
-}
-
-const AuthButton = withRouter(({ history }) => (
-  fakeAuth.isAuthenticated ? (
-    <p>
-      Welcome! <button onClick={() => {
-        fakeAuth.signout(() => history.push('/'))
-      }}>Sign out</button>
-    </p>
-  ) : (
-    <p>You are not logged in.</p>
-  )
-))
-
-const PrivateRoute = ({ component, ...rest }) => (
-  <Route {...rest} render={props => (
-    fakeAuth.isAuthenticated ? (
-      React.createElement(component, props)
-    ) : (
-      <Redirect to={{
-        pathname: '/login',
-        state: { from: props.location }
-      }}/>
-    )
-  )}/>
-)
-
-const Public = () => <h3>Public</h3>
-const Protected = () => <h3>Protected</h3>
-
+import { FormInput, FormInput1 } from '../../components/MyComponents'
+import { SERVER } from '../../constants' 
+var request = require('superagent');
 
 class SignUp extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			redirectToReferrer: false
-		}
-
-	}
-
-		login = () => {
-			fakeAuth.authenticate(() => {
-				this.setState({ redirectToReferrer: true })
-			})
-		}
-  render() {
-		console.log(this.props);
-		console.log(this.props.location);
-		const { from } = this.props.location.state || { from: { pathname: '/' } }
-	  const { redirectToReferrer } = this.state
-    
-    if (redirectToReferrer) {
-      return (
-        <Redirect to={from}/>
-      )
+  constructor(props) {
+    super(props);var request = require('superagent');
+    this.state = { username: '', password: '' };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+// .type('form')
+    handleSubmit(event) {
+        console.log(this.state)
+        const {username, password } = this.state;
+    event.preventDefault();
+    if(username && password){
+      request.post(`${SERVER}/signup`)
+      .send({ email: username, password: password })
+      .then(data=>{console.log(`data comming from response`,data)})
+      .catch(error=>{console.log(`ERROR comming from response`,error)})
+    }else{
+      alert(`This is the data from the form ${username} and ${password} `);
     }
-     
+  }
+
+  render() {
+		const visible= 'visible';
+
     return (
-			<div>
-        <p>You must log in to view the page at {from.pathname}</p>
-        <button onClick={this.login}>Log in</button>
+      <div className={`loginform ${visible}`}>
+        <div className='loginbar'>
+          <a href="#">
+            <span><img src="./pb-logo.jpg"/></span>
+            <span>{'PROCESS BRIDGE'}</span>
+            <span>{'SignUP'}</span>
+          </a>
+        </div>
+        <form onSubmit={this.handleSubmit}>
+            
+          <FormInput1 type='text' placeholder='Username' name='username'
+              value={this.state.username} onChange={(e)=>this.setState({username:e.target.value})}
+          />
+          <FormInput1 type='password' placeholder='Password' name='password'
+              value={this.state.password} onChange={(e)=> this.setState({password:e.target.value})}
+          />
+          <input type="submit" value="Submit"/>
+        </form>
       </div>
     );
   }
