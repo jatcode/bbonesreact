@@ -2,9 +2,7 @@ import { autorun,  observable } from 'mobx'
 
 
 class AppState {
-	@observable todos = ['buy milk','buy eggs']
-	@observable filter = ''
-	@observable user = {
+	@observable currentUser = {
 		email: '',
 		password: ''
 	}

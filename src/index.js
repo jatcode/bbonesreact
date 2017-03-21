@@ -1,14 +1,18 @@
 import React from  'react'
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
+import {Provider} from 'mobx-react'
 import  App   from './containers/App'
 import  TodoList   from './containers/TodoList'
-import  AppState from './stores/AppState'
+
+import  stores from './stores'
 
 ReactDOM.render(
-	<Router> 
-    <App store ={AppState} />
-	</Router>
+	<Provider login ={stores.login}>
+		<Router> 
+	    <App />
+		</Router>
+	</Provider>
 	,
   document.getElementById('root')
 );

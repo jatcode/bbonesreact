@@ -93,7 +93,7 @@ header {
   margin-left: auto;
   margin-right: auto;
   padding: 5px;
-  height: 230px;
+  /*height: 230px;*/
   width: 400px;
   border: 1px solid #B3AAAA;
   /*background: rgba(126, 109, 109, 0.5);*/
@@ -111,19 +111,28 @@ header {
   border-radius: 3px;
 }
 
-.loginbar a span{
+#title{
   height: 20px;
   padding: 0 5px;
   color: #fff;
   font-size: 25px;
   font-weight: 600;
+  text-align: center;
+}
+.loginbar a span{
+  /*height: 20px;
+  padding: 0 5px;
+  color: #fff;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;*/
 }
 
 .loginbar a span img{
-  padding: 1px 10px 0px 0px;
+  padding: 1px 10px 0px 7px;
   height: 59px;
   /*box-shadow: 3px 3px 1px #1F1F1f;*/
-  border-radius: 3px;
+  border-radius: 4px;
 }
 .formfield{
 }

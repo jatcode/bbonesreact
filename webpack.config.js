@@ -36,15 +36,15 @@ module.exports = {
 			/*	{
 				test: /\.(woff2?|ttf|svg|eot)(\?v=\d+\.\d+\.\d+)?$/,
 				loader: 'file-loader'
-			},*/
-			/*{
+			}*/,
+			{
 				test: /\.(jpe?g|png|gif|svg)$/,
 				use: [{
 					loader: 'url-loader',
 					options:{ limit:10000 }//converts images <10k to base64 strings? necesary????
 				}]
 				//				loader: "file-loader?name=app/images/[name].[ext]"
-			},*/
+			},
     ]
   },
   devServer: {

@@ -7,17 +7,21 @@ import SignUP from '../containers/login/signup';
 import Routes from '../containers/login/routerex';
 import TodoList from './TodoList';
 import TodoStore from './TodoStore';
+import DevTools from 'mobx-react-devtools'
 import { observer } from 'mobx-react';
 
-@observer 
+// @observer(['login']) 
 class App extends Component {
 	constructor(props) {
 		super(props);
 	}
  render() {
-	 console.log('store in app',this.props.store)
+	//  console.log('store in app',this.props.store)
 	 return (
-		 <SignUP store={this.props.store}/>
+		 <div>
+			 <SignUP />
+			 <DevTools />
+		 </div>
    );
  }
 }

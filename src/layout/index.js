@@ -1,12 +1,7 @@
 import React from 'react';
 import './layout.css';
 import styled from 'styled-components';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 export const DefaultLayout = ({component:Component,...rest}) =>{
   return(
