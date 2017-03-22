@@ -8,7 +8,7 @@ import  TodoList   from './containers/TodoList'
 import  stores from './stores'
 
 ReactDOM.render(
-	<Provider login ={stores.login}>
+	<Provider login ={stores.login} appState={stores.appState}>
 		<Router> 
 	    <App />
 		</Router>

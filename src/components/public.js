@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {FormInput, InputField} from '../../components/MyComponents'
+import {FormInput, InputField} from '../components/MyComponents'
 import {inject, observer} from 'mobx-react';
-import pblogo  from '../../images/pb-logo.jpg'
+import pblogo  from '../images/pb-logo.jpg'
 
 
 @inject('login','appState')@observer
-class Login extends Component {
+class Public extends Component {
   constructor(props) {
     super(props);
     var request = require('superagent');
@@ -33,8 +33,7 @@ class Login extends Component {
       <div className={`loginform ${visible}`}>
         <div className='loginbar'>
           <a href="#">
-            <span><img src={pblogo}/></span>
-            <span id='title'>{'LOGIN'}</span>
+            <span id='title'>{'PUBLIC'}</span>
           </a>
         </div>
         <form onSubmit={this.handleSubmit}>
@@ -46,4 +45,4 @@ class Login extends Component {
     );
   }
 }
-export default Login;
+export default Public;

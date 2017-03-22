@@ -1,7 +1,9 @@
 import login from './Login'
+import appState from './AppState'
 
 const stores = {
-  login,
+	login,
+	appState,
 }
 
 export default stores;

@@ -24,17 +24,7 @@ class SignUp extends Component {
     const {email, password } = this.props.login.user;
     console.log('this is the email:',email);
     console.log('this is the paassword:',password);
-    this.props.login.performLogin(email,password);
-    // const {username, password} = this.state;
-    // if (username && password) {
-    //   request.post(`${SERVER}/signup`).send({email: username, password: password}).then(data => {
-    //     console.log('data comming from response', data)
-    //   }).catch(error => {
-    //     console.log('ERROR comming from response', error)
-    //   })
-    // } else {
-    //   alert(`This is the data from the form ${username} and ${password} `);
-    // }
+    this.props.login.performSignUp(email,password);
   }
 
   render() {

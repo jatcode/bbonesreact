@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-// import Main from '../components/Main';
-// import SignUp from '../containers/login/signup'
-import {Container } from '../layout/index.js';
+import { Container,Header,Content } from '../layout/index.js';
 import Login from '../containers/login/index';
 import SignUP from '../containers/login/signup';
 import Routes from '../containers/login/routerex';
-import TodoList from './TodoList';
-import TodoStore from './TodoStore';
 import DevTools from 'mobx-react-devtools'
 import { observer } from 'mobx-react';
 
@@ -19,7 +15,8 @@ class App extends Component {
 	//  console.log('store in app',this.props.store)
 	 return (
 		 <div>
-			 <SignUP />
+			 <Header />
+			 <Content/>
 			 <DevTools />
 		 </div>
    );

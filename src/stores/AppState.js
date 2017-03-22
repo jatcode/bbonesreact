@@ -1,13 +1,12 @@
 import { autorun,  observable } from 'mobx'
 
-
 class AppState {
 	@observable currentUser = {
+		isAuthenticated: false,
+		redirectToReferrer: false,
 		email: '',
-		password: ''
+		password: '',
 	}
 }
 
-//var store = window.store = new AppState 
-
-export default new AppState;
+export default new AppState();
