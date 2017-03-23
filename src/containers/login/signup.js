@@ -35,7 +35,7 @@ class SignUp extends Component {
         <div className='loginbar'>
           <a href="#">
             <span><img src={pblogo}/></span>
-            <span id='title'>{'SIGNUP'}</span>
+            <span id='title'>{'CREATE A NEW ACCOUNT'}</span>
           </a>
         </div>
         <form onSubmit={this.handleSubmit}>
